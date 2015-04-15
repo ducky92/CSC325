@@ -1,0 +1,16 @@
+a a
+a b
+a c
+b c
+c b
+d b
+e c
+f d
+d e
+e f
+d g
+f h
+h g
+g i
+j h
+i j

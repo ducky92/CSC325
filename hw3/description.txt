@@ -1,0 +1,15 @@
+CSC 325 Homework 3
+
+Section 12.4 of the textbook explains that the expected height of a randomly-built binary search tree with n distinct keys is O(lg n). Write a program called h3.cpp that experimentally confirms this. Recall that the height of a tree is the maximum number of edges from the root to a leaf.
+
+For a given value of n, generate all permutations of the int vector (0, ..., n − 1) using std::next_permutation. For each permutation, insert the elements in that order into an initially empty BST and get the height of the tree. Sum the heights for each permutation and divide by n!, the number of permutations. This will give the expected height.
+
+You must implement a BST class that (1) allows insertion and (2) can compute the height of the tree in linear time. (Or you can keep track of the height in a field as you do insertions.) You don't need to implement search or delete methods. It's good practice to make the tree generic, but you can implement a tree just for int keys if you want.
+
+The program has no inputs. The output is a table that lists n, lg n, and the expected height as computed above, for n from 1 to 10. Use the exact format shown in the incomplete output below (I don't want to give away all the answers!), where n is displayed with exactly two digits, and lg n and the expected height are displayed with exactly one digit to the left of the decimal and exactly five digits to the right (using the default rounding provided by C++). Use <iomanip> for formatted output.
+
+01 0.00000 0.00000
+02 1.00000 1.00000
+...
+10 3.32193 4.64109
+16:27:00 Thu 25 Sep 2014  —EDS

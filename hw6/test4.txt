@@ -1,0 +1,12 @@
+moose fish
+moose horse
+moose owl
+fish swan
+frog horse
+swan owl
+owl frog
+pig moose
+cow fish
+horse bug
+pig bug
+pig cow

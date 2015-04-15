@@ -1,0 +1,27 @@
+CSC 325 Homework 4
+
+Write a program called h4.cpp that reads a rectangular array of digits ('0'..'9') from standard input, and finds a path from the bottom row to the top row that maximizes the sum of the digits visited. The only valid moves are north (up), northwest, and northeast, but the path must stay within the board. If there is more than one path of maximum value, select the path that stays as close as possible to the left edge of the board. Output the result to standard output using the exact output format shown below; the numbers in parentheses are the sum of the digits along the path to that row.
+
+Use dynamic programming, where the smallest subproblem is just the last row, the next smallest subproblem is the last two rows, and so on. For each position in the topmost row of the current subproblem, you must calculate the best sum you can achieve at that position, based on the best sums you could achieve (and already computed) for the row below it. If the board has m rows and n columns, then your solution must run in worst-case time and space O(mn).
+
+You can assume that the array will be nonempty and have at most 70 rows and 70 columns. You can't read a 70-digit number as an int, so read each row as a string using getline, then convert the digits to their numeric value. If c is a character '0'..'9', then c - '0' is its numeric value.
+
+You will need three m × n arrays: one for the input digits at each position, one for the best sum at each position, and one that tells you which digit in the following row led to the best sum at that position in the current row (I suggest using the characters \, |, / for that). Note that although you are computing a path from bottom to top, you must still print the output top down, so you must store the paths “backward”.
+
+For example, if file a.txt contains the following digits
+
+47659
+88749
+98765
+09854
+09042
+20283
+then running h4 < a.txt must produce exactly the following output:
+
+.7... (44)
+8.... (37)
+9.... (29)
+.9... (20)
+.9... (11)
+2.... (2)
+15:00:00 Fri 10 Oct 2014  —EDS

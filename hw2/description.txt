@@ -1,0 +1,29 @@
+CSC 325 Homework 2
+
+The Society for Efficient Algorithms (SEA) assigns its members an ID of the form AB000001, which consists of the person's first initial, last initial, and seniority. The seniority is a six-digit number that says when the person joined relative to all the other members with the same initials. For example, if Jo Kepler were the 27th person to join with the initials JK, her ID would be JK000027.
+
+The SEA membership database is just a simple text file with one person per line, stored in order of membership, oldest first. That makes it easy to add a new member: just add that person to the end of the file. Members' full names can be anything, but must begin with an uppercase English letter and contain at least one more uppercase English letter; the first and last such letters are their first and last initials.
+
+Write a program h2.cpp that reads a membership database (containing zero or more lines) into a vector<string> and writes a roster sorted by ID, in the exact format shown below. For example, if the membership database is
+
+Alan Q. Ashley
+Bob Smith
+Zeke B.S. Quigley
+Bart Simpson
+B Smithley Staffordshire
+Axel Aardvark
+then the output must be exactly the following, byte-for-byte:
+
+AA000001 Alan Q. Ashley
+AA000002 Axel Aardvark
+BS000001 Bob Smith
+BS000002 Bart Simpson
+BS000003 B Smithley Staffordshire
+ZQ000001 Zeke B.S. Quigley
+There are no file names. Your program must be noninteractive. You read from standard input (cin in C++) and write to standard output (cout in C++). By default, standard input is the keyboard, so you can type in the names by hand and press the end-of-file key when done. (That's <Ctrl-Z><Enter> on Windows and <Ctrl-D> on Mac or Linux.) But the whole point of using standard input and output is to enable I/O redirection, which allows you to control where your program gets its input and writes its output, without changing the program.
+
+Because this is the Society for Efficient Algorithms, you must use the fastest possible sorting algorithm. Specifically, you must use the counting sort from Section 8.2 that runs in worst-case linear time. There are only 26 × 26 = 676 possible combinations of two uppercase English letters. If a person's initials are XY, where X and Y are char variables, then the C++ expression 26*(X - 'A') + (Y - 'A') will produce an integer key in the range 0–675 that can be used in counting sort. Once you have sorted the names based on their key, you can create the IDs on the fly as you print them out.
+
+You must use a vector<string> because you won't know in advance how many names there will be, and vectors grow automatically as needed. I will test your program with inputs of different sizes, including a million names.
+
+21:49:37 Thu 11 Sep 2014  —EDS
